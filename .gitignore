@@ -31,7 +31,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-GoogleService-Info.plist
+/macos/Runner/GoogleService-Info.plist
+/ios/Runner/GoogleService-Info.plist
 
 # Web related
 lib/generated_plugin_registrant.dart
