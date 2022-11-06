@@ -1,6 +1,7 @@
 import 'package:finance_mobile_app/Provider/login_provider.dart';
 import 'package:finance_mobile_app/screens/home_screen.dart';
 import 'package:finance_mobile_app/screens/intro_screen.dart';
+import 'package:finance_mobile_app/screens/report_screen.dart';
 import 'package:finance_mobile_app/screens/sign_up_screen.dart';
 import 'package:finance_mobile_app/widgets/monthly_tile.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           HomeScreen.routeName: (context) => HomeScreen(),
           IntroScreen.routeName: (context) => IntroScreen(),
           SignUpScreen.routeName: (context) => SignUpScreen(),
+          ReportScreen.routeName: (context) => ReportScreen(),
         },
         // const MyHomePage(title: 'Flutter Demo Home Page'),
       ),

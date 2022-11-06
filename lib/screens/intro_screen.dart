@@ -2,6 +2,7 @@
 
 import 'package:finance_mobile_app/Provider/login_provider.dart';
 import 'package:finance_mobile_app/screens/home_screen.dart';
+import 'package:finance_mobile_app/screens/report_screen.dart';
 import 'package:finance_mobile_app/screens/sign_up_screen.dart';
 import 'package:finance_mobile_app/widgets/sign_in_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -57,7 +58,7 @@ class _IntroScreenState extends State<IntroScreen> {
           Provider.of<LoginProvider>(context, listen: false)
               .setProfile(account.photoUrl!, account.displayName!);
         }
-        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        Navigator.pushReplacementNamed(context, ReportScreen.routeName);
         print(account);
       });
       if (_currentUser != null) {
@@ -67,7 +68,7 @@ class _IntroScreenState extends State<IntroScreen> {
           Provider.of<LoginProvider>(context, listen: false)
               .setProfile(account.photoUrl!, account.displayName!);
         }
-        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        Navigator.pushReplacementNamed(context, ReportScreen.routeName);
       }
     });
     _googleSignIn.signInSilently();

@@ -12,9 +12,9 @@ import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
-  static String routeName = 'HomeScreen';
-  const HomeScreen({Key? key}) : super(key: key);
+class ReportScreen extends StatelessWidget {
+  static String routeName = 'ReportScreen';
+  const ReportScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,76 +67,57 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                BigCard(),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: MediaQuery.of(context).size.height * 0.26,
-                  width: MediaQuery.of(context).size.width * 0.41,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SmallCard(
-                        backgroundColor: Color.fromARGB(255, 190, 246, 216),
-                        balance: '\$ 3250.50',
-                        cardNumber: '****  ****  ****  4321',
-                        rupay: false,
-                      ),
-                      SmallCard(
-                        backgroundColor: Color.fromARGB(255, 253, 239, 239),
-                        balance: '\$ 1850.45',
-                        cardNumber: '****  ****  ****  1245',
-                        rupay: true,
-                      ),
-                    ],
-                  ),
+              Container(
+                padding: EdgeInsets.fromLTRB(14, 0, 14, 0),
+                height: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width * 1,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 190, 246, 216),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-              ]),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Quick Service',
-                      style: TextStyle(fontWeight: FontWeight.w600)),
-                  Text('View All', style: linkStyle)
-                ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Expanded(
+                        //   flex: 2,
+                        //   child: Align(
+                        //     alignment: Alignment.topRight,
+                        //     child: Image.asset(
+                        //       'images/mastercard-logo.png',
+                        //       height: 35,
+                        //       width: 35,
+                        //     ),
+                        //   ),
+                        // ),
+                        Text(
+                          '\$ 3250.50',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          '****  ****  ****  4321',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        )
+                      ],
+                    ),
+                    Image.asset(
+                      'images/mastercard-logo.png',
+                      height: 40,
+                      width: 40,
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(height: 5),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ServicesCard(
-                    label: 'Credit Card',
-                    icon: 'images/credit-card.png',
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  ServicesCard(
-                    label: 'Investments',
-                    icon: 'images/investments.png',
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  ServicesCard(
-                    label: 'Loans',
-                    icon: 'images/loans.png',
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  ServicesCard(
-                    label: 'Shop',
-                    icon: 'images/shop.png',
-                  ),
-                ],
+              SizedBox(
+                height: 10,
               ),
-              SizedBox(height: 10),
               DottedBorder(
                 dashPattern: [5],
                 borderType: BorderType.RRect,
@@ -205,7 +186,7 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Transactions',
+                  Text('Spending Breakdown',
                       style: TextStyle(fontWeight: FontWeight.w600)),
                   Text('See All', style: linkStyle)
                 ],
@@ -247,37 +228,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Monthly Budget',
-                    style: TextStyle(fontWeight: FontWeight.w600)),
-              ),
-              SizedBox(height: 5),
-              Container(
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    children: [
-                      MonthlyTile(
-                        title: 'Transportation',
-                        subTitle: 'AVG Spent \$24 a Week',
-                        value1: '\$58',
-                        value2: '\$124',
-                        comment:
-                            'Your Transportation budget on a Good Condition.',
-                        iconColor: Color.fromARGB(255, 255, 102, 138),
-                      ),
-                      MonthlyTile(
-                        title: 'Shopping',
-                        subTitle: 'Next Payment 28 Dec',
-                        value1: '\$447',
-                        value2: '\$847',
-                        comment:
-                            'Your Transportation budget on a Good Condition.',
-                        iconColor: Color.fromARGB(255, 54, 66, 148),
-                      )
-                    ],
-                  )),
             ],
           ),
         ),
